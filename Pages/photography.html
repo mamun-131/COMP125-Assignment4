@@ -1,0 +1,263 @@
+<!-- 
+ this is a mini profile extended web application which is all about Md Mamunur Rahman 
+ @Author Md Mamunur Rahman
+ @student ID: 300872772
+ @Version 0.0.2 Added funtionality to show value of fields of form in console
+ @Last Update 09-June-2016
+-->
+<!-- This is photography html file which includes all photography portal pages of Md Mamunur Rahman -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-Frame-Options">
+    <title>Photography</title>
+    <link rel="icon" href="../Assets/favico.png" type="image/png" sizes="16x16">
+    <!-- CSS Section -->
+    <link rel="stylesheet" href="../Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../Scripts/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Content/css/app.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        
+      </button>
+                <!--Brand of Navigation Bar -->
+                <a class="navbar-brand" href="../index.html"><img class="logo" src="../Assets/logo1.svg"> <span class="allabout">
+                    <small><small><small><small><small><small>
+                        <small><small><small><small>TH</small>IS </small>IS 
+                    </small>A</small>LL</small> A</small>B</small>O</small>U</small>T 
+                    </small><b>ME</b></span></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="../index.html"><i class="fa fa-home fa-lg"></i> Home</a></li>
+                    <li><a href="biography.html"><i class="fa fa-book fa-lg"></i> Biography</a></li>
+                    <li><a href="projects.html"><i class="fa fa-dropbox fa-lg"></i> Projects</a></li>
+                    <li><a href="blogs.html"><i class="fa fa-coffee fa-lg"></i> Blogs</a></li>
+                    <li class="active"><a href="photography.html"><i class="fa fa-camera fa-lg"></i> Photography</a></li>
+                    <li><a href="contact.html"><i class="fa fa-volume-control-phone fa-lg"></i> Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!--Right Side Accordian Bar -->
+
+    <div id="wrapper">
+        <div id="sidebar-wrapper" class="col-md-2">
+            <div id="sidebar">
+                <ul class="nav list-group">
+
+                    <div id="MainMenu" id="accordianSpace">
+                        <div class="list-group panel">
+
+                            <a href="#accordianHome" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Home</a>
+                            <div class="collapse" id="accordianHome">
+                                <a href="../index.html" class="list-group-item">---Welcome To My World</a>
+                            </div>
+
+                            <a href="#accordianBiography" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">My Biography</a>
+                            <div class="collapse" id="accordianBiography">
+                                <a href="biography.html" class="list-group-item">---Biography</a>
+                            </div>
+
+                            <a href="#accordianContact" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">My Contact</a>
+                            <div class="collapse" id="accordianContact">
+                                <a href="contact.html" class="list-group-item">---Contact</a>
+                            </div>
+
+                            <a href="#accordianProject" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">My Projects</a>
+                            <div class="collapse" id="accordianProject">
+                                <a href="http://photobook.azurewebsites.net/?p=2" target="_blank" class="list-group-item">---Photobook</a>
+                                <a href="http://www.myrasona.com" target="_blank" class="list-group-item">---My Rasona</a>
+                                <a href="http://photographers.azurewebsites.net" target="_blank" class="list-group-item">---Photographer</a>
+                            </div>
+
+
+                            <a href="#accordianBlog" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">My Blogs</a>
+                            <div class="collapse" id="accordianBlog">
+                                <a href="http://mamunglobalwarming.blogspot.ca/2016/05/global-warmingthe-unseen-truth-is-not.html" target="_blank" class="list-group-item">---Blog 1</a>
+                                <a href="http://mamundigitaldivide.blogspot.ca/2016/05/normal-0-false-false-false-en-us-ja-x.html" target="_blank" class="list-group-item">---Blog 2</a>
+
+                            </div>
+
+                            <a href="#accordianPhotography" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">My Photography</a>
+
+                            <div class="collapse" id="accordianPhotography">
+                                <a href="https://www.flickr.com/photos/122827071@N02/" target="_blank" class="list-group-item">---My Flickr</a>
+                                <a href="http://www.pixoto.com/mamun_131" target="_blank" class="list-group-item">---My Pixoto</a>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </ul>
+              
+            </div>
+        </div>
+
+
+        <!--Body Content -->
+
+        <div id="main-wrapper" class="col-md-10 pull-right">
+            <div id="main">
+
+                <div class="page-header">
+
+                    <h2 class="text-muted"><span id="photographyHeading"  ></span></h2>
+                </div>
+
+                <p id="photographyPara"> </p>
+
+
+                <!-- Page Content -->
+                <div class="container">
+
+                    <div class="row">
+
+
+
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/14730313434/in/dateposted-public/" target="_blank">
+                                <img class="img-responsive" src="../Assets/p1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/14239067491/in/dateposted-public/" target="_blank">
+                                <img class="img-responsive" src="../Assets/p2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/15677136451/in/dateposted-public/" target="_blank">
+                                <img class="img-responsive" src="../Assets/p3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/14758994290/in/dateposted-public/" target="_blank">
+                                <img class="img-responsive" src="../Assets/p11.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/14701501116/in/dateposted-public/" target="_blank">
+                                <img class="img-responsive" src="../Assets/p13.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/15655365286/in/dateposted-public/" target="_blank">
+                                <img class="img-responsive" src="../Assets/p4.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/15494264210/in/dateposted-public/" target="_blank">
+                                <img class="img-responsive" src="../Assets/p5.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/14922752986/in/dateposted-public/" target="_blank">
+                                <img class="img-responsive" src="../Assets/p6.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/15045257277/in/dateposted-public/" target="_blank">
+                                <img class="img-responsive" src="../Assets/p12.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/14478002205/in/dateposted-public//" target="_blank">
+                                <img class="img-responsive" src="../Assets/p14.jpg" alt="">
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/15474524201/in/dateposted-public/" target="_blank">
+                                <img class="img-responsive" src="../Assets/p7.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/14847135131/in/dateposted-public/" target="_blank">
+                                <img class="img-responsive" src="../Assets/p8.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/15290991450/in/dateposted-public/" " target="_blank ">
+                                <img class="img-responsive " src="../Assets/p9.jpg " alt=" ">
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-xs-5 thumb">
+                            <a class="thumbnail " href="https://www.flickr.com/photos/122827071@N02/15408334995/in/dateposted-public/
+                                " target="_blank ">
+                                <img class="img-responsive" src="../Assets/p10.jpg " alt=" ">
+                            </a>
+                        </div>
+                                                <div class="col-lg-2 col-md-3 col-xs-5 thumb ">
+                            <a class="thumbnail" href="https://www.flickr.com/photos/122827071@N02/13765504564/in/dateposted-public/
+                                " target="_blank ">
+                                <img class="img-responsive" src="../Assets/p15.jpg " alt=" ">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /.container -->
+      </div>
+    </div>
+
+            <!-- footer -->
+            <div class="col-md-12 footer">
+
+                <div id="footer">
+                    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+                        <ul class="nav navbar-nav navbar-left ">
+                            <li><a href="https://www.facebook.com/md.mamunur.rahman" target="_blank "><i class="fa fa-facebook
+                                fa-lg "></i> My Facebook</a></li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/md-mamunur-rahman-31a6375?trk=nav_responsive_tab_profile_pic
+                                " target="_blank "><i class="fa fa-linkedin fa-lg "></i> My Linkedin</a>
+                            </li>
+                            <li><a href="https://www.flickr.com/photos/122827071@N02/" target="_blank "><i class="fa fa-flickr
+                                fa-lg "></i> My Flickr</a></li>
+                            <li><a href="http://www.pixoto.com/mamun_131" target="_blank"><i class="fa fa-pinterest-square
+                                fa-lg"></i> My Pixoto</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+  
+
+    <!-- JavaScript Section -->
+    <script src="../Scripts/lib/jquery/dist/jquery.min.js"></script>
+    <script src="../Scripts/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../Scripts/app.js"></script>
+</body>
+
+</html>
