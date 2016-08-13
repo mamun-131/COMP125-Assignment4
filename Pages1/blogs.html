@@ -2,27 +2,27 @@
  this is a mini profile extended web application which is all about Md Mamunur Rahman 
  @Author Md Mamunur Rahman
  @student ID: 300872772
- @Version 0.0.2 Added funtionality to show value of fields of form in console
+@Version 0.0.2 Added funtionality to show value of fields of form in console
  @Last Update 09-June-2016
 -->
-<!-- This is projects html file which includes all projects of Md Mamunur Rahman -->
+<!-- This is blogs html file which includes all blogs of Md Mamunur Rahman -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projects</title>
+    <title>Blogs</title>
     <link rel="icon" href="../Assets/favico.png" type="image/png" sizes="16x16">
     <!-- CSS Section -->
-     <link rel="stylesheet" href="../Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="../Scripts/lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../Content/css/app.css">
 </head>
 
 <body>
-
+<div id="wrapper" class="col-md-12">
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -48,8 +48,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="../index.html"><i class="fa fa-home fa-lg"></i> Home</a></li>
                     <li><a href="biography.html"><i class="fa fa-book fa-lg"></i> Biography</a></li>
-                    <li class="active"><a href="projects.html"><i class="fa fa-dropbox fa-lg"></i> Projects</a></li>
-                    <li><a href="blogs.html"><i class="fa fa-coffee fa-lg"></i> Blogs</a></li>
+                    <li><a href="projects.html"><i class="fa fa-dropbox fa-lg"></i> Projects</a></li>
+                    <li class="active"><a href="blogs.html"><i class="fa fa-coffee fa-lg"></i> Blogs</a></li>
                     <li><a href="photography.html"><i class="fa fa-camera fa-lg"></i> Photography</a></li>
                     <li><a href="contact.html"><i class="fa fa-volume-control-phone fa-lg"></i> Contact</a></li>
                 </ul>
@@ -59,14 +59,14 @@
 
     </nav>
 
-    <!--Right Side Accordian Bar -->
 
-    <div id="wrapper">
+    <!--Right Side Accordian Bar -->
+    
         <div id="sidebar-wrapper" class="col-md-2">
             <div id="sidebar">
                 <ul class="nav list-group">
 
-                    <div id="MainMenu" id="accordianSpace">
+                    <div id="MainMenu" >
                         <div class="list-group panel">
 
                             <a href="#accordianHome" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Home</a>
@@ -76,7 +76,7 @@
 
                             <a href="#accordianBiography" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">My Biography</a>
                             <div class="collapse" id="accordianBiography">
-                                <a href="biography.html" class="list-group-item">---Biography</a>
+                                <a href="biography.html" class="list-group-item">B---iography</a>
                             </div>
 
                             <a href="#accordianContact" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">My Contact</a>
@@ -114,8 +114,7 @@
 
 
                 </ul>
- 
-               
+             
             </div>
         </div>
 
@@ -127,10 +126,12 @@
 
                 <div class="page-header">
 
-                    <h2 class="text-muted"><span id="projectsHeading"  ></span></h2>
+                    <h2 class="text-muted"><span id="blogsHeading" ></span></h2>
                 </div>
 
-                <p id="projectsPara"> </p>
+                <p id="blogsPara"> </p>
+
+
             </div>
 
 
