@@ -301,7 +301,7 @@ label #inp{
 }
 @media screen and (max-width: 768px) {
     h1, h2{
-        font-size:11px;
+        font-size:12px;
     }
 
 
@@ -345,12 +345,12 @@ label #inp{
     #main-wrapper {
         float: right;
     }
-}
+}*/
 @media  screen and(max-width: 768px) {
     #main-wrapper {
         padding-top: 0px;
     }
-}*/
+}
 @media  screen and(max-width: 768px) {
     #main {
         width: 100%
