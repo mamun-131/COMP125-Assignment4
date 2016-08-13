@@ -260,6 +260,10 @@ padding-left: 0px;
 margin-left: 0px;
 
 }
+.col-md-10
+{
+    float: right;
+}
 .col-xs-7
 {
     float: left;
@@ -351,7 +355,7 @@ label #inp{
     #sidebar-wrapper {
         position: static;
         height:auto;
-        max-height: 10px;
+        max-height: 300px;
   		border-right:0;
           visibility: hidden;
 	}
