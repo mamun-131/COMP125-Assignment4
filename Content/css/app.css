@@ -340,6 +340,11 @@ label #inp{
         padding-top: 0px;
         font-size: 12px;
     }
+.allabout{
+ font-size: 22px;  
+   text-shadow:  3px 3px black;
+}
+
 }
 @media (max-width: 768px) {
     #main-wrapper {
