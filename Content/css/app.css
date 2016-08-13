@@ -82,13 +82,15 @@ body {
 }
 #main-wrapper {
     height: 100%;
-    overflow-y: auto;
+    float: right;
+    overflow: hidden;
     padding: 50px 0 0px 0;
 }
 #main {
     position: relative;
+    width: 100%;
     height: 100%;
-    overflow-y: auto;
+    overflow: hidden;
     padding: 0 15px;
 }
 #sidebar-wrapper {
@@ -181,7 +183,8 @@ body {
 /*biography image decoration*/
 .mamunImage
 {
-    width:80%;height:90%;
+    width:140px;
+    height:140px;
     padding: 5px 5px 5px 5px;
     
     
@@ -254,6 +257,12 @@ body {
     border-style: solid;
     border-color:   crimson  brown;
 }
+.col-md-12
+{
+padding-left: 0px;
+margin-left: 0px;
+
+}
 .col-xs-7
 {
     float: left;
@@ -273,25 +282,30 @@ label #inp{
 /**
 *Code for smaller screen
 */
-@media (max-width: 768px) {
+@media (max-width: 990px) {
     #sidebar-wrapper {
-        position: static;
+        visibility: hidden;
+    /*    position: static;
         height:auto;
         max-height: 300px;
-  		border-right:0;
+  		border-right:0;*/
 	}
+        body {
+        padding-top: 0px;
+        font-size: 11px;
+    }
+    #main-wrapper {
+       width: 100%;
+    }
     
 }
 @media screen and (max-width: 768px) {
     h1{
-        font-size:16px;
-    }
-    p{
-        font-size:12px;
-       
+        font-size:14px;
     }
 
- #MainMenu, #footer, .animateLogo
+
+ #sidebar-wrapper, #footer, .animateLogo
    {
         visibility: hidden;
        position: absolute;
@@ -321,33 +335,37 @@ label #inp{
    color:  #004d4d;
 }
 
-@media (max-width: 768px) {
+/*@media  screen and (max-width: 768px) {
     body {
         padding-top: 0px;
         font-size: 10px;
     }
 }
-@media (min-width: 768px) {
+@media  screen and(min-width: 768px) {
     #main-wrapper {
         float: right;
     }
 }
-@media (max-width: 768px) {
+@media  screen and(max-width: 768px) {
     #main-wrapper {
         padding-top: 0px;
     }
+}*/
+@media  screen and(max-width: 768px) {
+    #main {
+        width: 100%
+    }
 }
-
-@media (max-width: 768px) {
+@media  screen and(max-width: 768px) {
     .mamunImage{
-    height:40%;
-    width:40%;
+	width: 100px;
+	height:100px;
 }
 
-.photobook {
-
-	width: 100%;
-	height:100%;
+.photobook,  .photobook1{
+    height:100%;
+    width:100%;
+   
 }
 }
     
@@ -356,5 +374,6 @@ label #inp{
 	bottom:0;
   	position:fixed;
     padding:10px;
+    visibility: hidden;
 
 }

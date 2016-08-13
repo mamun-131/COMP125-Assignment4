@@ -153,7 +153,7 @@
         formHandlingContactPage();
         handlingParagraph();
         readParagraphFile();
-        document.getElementById("mamun").innerHTML = greeter.greet();
+       // document.getElementById("mamun").innerHTML = greeter.greet();
     }
     // call init funciton when window finishes loading
     window.addEventListener("load", init);
