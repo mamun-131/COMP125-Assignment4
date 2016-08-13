@@ -312,13 +312,6 @@ label #inp{
         left: 0;
    }
 
-
-
-/*navebar-brand or Application heading for smaller screen*/
-.allabout{
- font-size: 20px;  
-   text-shadow:  3px 3px black;
-}
     
 }
 
@@ -355,6 +348,12 @@ label #inp{
     #main-wrapper {
         padding-top: 0px;
     }
+
+/*navebar-brand or Application heading for smaller screen*/
+.allabout{
+ font-size: 20px;  
+   text-shadow:  3px 3px black;
+}
 }
 @media (max-width: 990px) {
     #sidebar-wrapper {
