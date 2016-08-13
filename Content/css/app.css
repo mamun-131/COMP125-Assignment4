@@ -278,7 +278,14 @@ label #inp{
     float:left;
     }
 
+.footer {
+    background-color:#ffffff;
+	bottom:0;
+  	position:fixed;
+    padding:10px;
+ 
 
+}
 /**
 *Code for smaller screen
 */
@@ -294,9 +301,9 @@ label #inp{
         padding-top: 0px;
         font-size: 11px;
     }
-    #main-wrapper {
+  /*  #main-wrapper {
        width: 100%;
-    }
+    }*/
     
 }
 @media screen and (max-width: 768px) {
@@ -352,9 +359,9 @@ label #inp{
     }
 }
 @media  screen and(max-width: 768px) {
-    #main {
+  /*  #main {
         width: 100%
-    }
+    }*/
 }
 @media  screen and(max-width: 768px) {
     .mamunImage{
@@ -369,11 +376,4 @@ label #inp{
 }
 }
     
-.footer {
-    background-color:#ffffff;
-	bottom:0;
-  	position:fixed;
-    padding:10px;
-    visibility: hidden;
 
-}
