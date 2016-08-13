@@ -274,27 +274,21 @@ label #inp{
     vertical-align: auto;
     float:left;
     }
-.footer {
-    background-color:#ffffff;
-	bottom:0;
-  	position:fixed;
-    padding:10px;
 
-}
 
 /**
 *Code for smaller screen
-*/
+
 @media (max-width: 990px) {
     #sidebar-wrapper {
-        /*position: static;
+        position: static;
         height:auto;
         max-height: 300px;
-  		border-right:0;*/
-        visibility: hidden;
+  		border-right:0;
+        
 	}
     
-}
+}*/
 
 @media screen and (max-width: 768px) {
     h1{
@@ -353,7 +347,7 @@ label #inp{
         padding-top: 0px;
     }
 }
-/*@media (max-width: 768px) {
+@media (max-width: 768px) {
     #sidebar-wrapper {
         position: static;
         height:auto;
@@ -361,7 +355,7 @@ label #inp{
   		border-right:0;
 	}
     
-}*/
+}
 @media (max-width: 768px) {
     .mamunImage{
     height:40%;
@@ -374,5 +368,12 @@ label #inp{
 	height:100%;
 }
 }
-    
+
+  .footer {
+    background-color:#ffffff;
+	bottom:0;
+  	position:fixed;
+    padding:10px;
+
+}  
 
