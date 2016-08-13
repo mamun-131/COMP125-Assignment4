@@ -347,12 +347,13 @@ label #inp{
         padding-top: 0px;
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 990px) {
     #sidebar-wrapper {
         position: static;
         height:auto;
         max-height: 300px;
   		border-right:0;
+          visibility: hidden;
 	}
     
 }
