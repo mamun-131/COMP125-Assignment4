@@ -254,11 +254,17 @@ body {
     border-style: solid;
     border-color:   crimson  brown;
 }
+.col-md-12
+{
+padding-left: 0px;
+margin-left: 0px;
+
+}
+
 .col-xs-7
 {
     float: left;
 }
-
 
 
 label #inp{       
