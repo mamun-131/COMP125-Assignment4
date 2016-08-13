@@ -355,7 +355,7 @@ label #inp{
     #sidebar-wrapper {
         position: static;
         height:auto;
-        max-height: 20px;
+        max-height: 2px;
   		border-right:0;
           visibility: hidden;
 	}
