@@ -83,7 +83,6 @@ body {
 #main-wrapper {
     height: 100%;
     overflow-y: auto;
-    
     padding: 50px 0 0px 0;
 }
 #main {
@@ -255,17 +254,11 @@ body {
     border-style: solid;
     border-color:   crimson  brown;
 }
-.col-md-12
-{
-padding-left: 0px;
-margin-left: 0px;
-
-}
-
 .col-xs-7
 {
     float: left;
 }
+
 
 
 label #inp{       
@@ -276,53 +269,20 @@ label #inp{
     float:left;
     }
 
-.footer {
-    background-color:#ffffff;
-	bottom:0;
-  	position:fixed;
-    padding:10px;
-
-}
-
 
 /**
 *Code for smaller screen
 */
-
-@media (max-width: 990px) {
-    #sidebar-wrapper {
-        /*position: static;
-        height:auto;
-        max-height: 300px;
-  		border-right:0;*/
-        visibility: hidden;
-	}
-    
-    body {
-        padding-top: 0px;
-        font-size: 11px;
-    }
-}
-
 @media screen and (max-width: 768px) {
-    h1 {
-        font-size:14px;
-       
+    h1{
+        font-size:16px;
     }
     p{
-        font-size:11px;
+        font-size:12px;
        
     }
 
- /*#MainMenu, #footer, .animateLogo
-   {
-        visibility: hidden;
-       position: absolute;
-        z-index: 12;
-        top: 0;
-        left: 0;
-   }*/
- #sidebar-wrapper, #footer, .animateLogo
+ #MainMenu, #footer, .animateLogo
    {
         visibility: hidden;
        position: absolute;
@@ -330,6 +290,7 @@ label #inp{
         top: 0;
         left: 0;
    }
+
 
 
 /*navebar-brand or Application heading for smaller screen*/
@@ -353,7 +314,12 @@ label #inp{
    color:  #004d4d;
 }
 
-
+@media (max-width: 768px) {
+    body {
+        padding-top: 0px;
+        font-size: 10px;
+    }
+}
 @media (min-width: 768px) {
     #main-wrapper {
         float:right;
@@ -364,7 +330,15 @@ label #inp{
         padding-top: 0px;
     }
 }
-
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        position: static;
+        height:auto;
+        max-height: 300px;
+  		border-right:0;
+	}
+    
+}
 @media (max-width: 768px) {
     .mamunImage{
     height:40%;
@@ -378,3 +352,10 @@ label #inp{
 }
 }
     
+.footer {
+    background-color:#ffffff;
+	bottom:0;
+  	position:fixed;
+    padding:10px;
+
+}
