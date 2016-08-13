@@ -2,17 +2,17 @@
  this is a mini profile extended web application which is all about Md Mamunur Rahman 
  @Author Md Mamunur Rahman
  @student ID: 300872772
-@Version 0.0.2 Added funtionality to show value of fields of form in console
+ @Version 0.0.2 Added funtionality to show value of fields of form in console
  @Last Update 09-June-2016
 -->
-<!-- This is blogs html file which includes all blogs of Md Mamunur Rahman -->
+<!-- This is a contatc html file which includes all contacts of Md Mamunur Rahman -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blogs</title>
+    <title>Contact</title>
     <link rel="icon" href="../Assets/favico.png" type="image/png" sizes="16x16">
     <!-- CSS Section -->
     <link rel="stylesheet" href="../Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<div id="wrapper" class="col-md-12">
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -49,9 +49,9 @@
                     <li><a href="../index.html"><i class="fa fa-home fa-lg"></i> Home</a></li>
                     <li><a href="biography.html"><i class="fa fa-book fa-lg"></i> Biography</a></li>
                     <li><a href="projects.html"><i class="fa fa-dropbox fa-lg"></i> Projects</a></li>
-                    <li class="active"><a href="blogs.html"><i class="fa fa-coffee fa-lg"></i> Blogs</a></li>
+                    <li><a href="blogs.html"><i class="fa fa-coffee fa-lg"></i> Blogs</a></li>
                     <li><a href="photography.html"><i class="fa fa-camera fa-lg"></i> Photography</a></li>
-                    <li><a href="contact.html"><i class="fa fa-volume-control-phone fa-lg"></i> Contact</a></li>
+                    <li class="active"><a href="contact.html"><i class="fa fa-volume-control-phone fa-lg"></i> Contact</a></li>
                 </ul>
             </div>
 
@@ -59,14 +59,14 @@
 
     </nav>
 
-
     <!--Right Side Accordian Bar -->
-    
+
+    <div id="wrapper">
         <div id="sidebar-wrapper" class="col-md-2">
             <div id="sidebar">
                 <ul class="nav list-group">
 
-                    <div id="MainMenu" >
+                    <div id="MainMenu" id="accordianSpace">
                         <div class="list-group panel">
 
                             <a href="#accordianHome" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Home</a>
@@ -76,7 +76,7 @@
 
                             <a href="#accordianBiography" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">My Biography</a>
                             <div class="collapse" id="accordianBiography">
-                                <a href="biography.html" class="list-group-item">B---iography</a>
+                                <a href="biography.html" class="list-group-item">---Biography</a>
                             </div>
 
                             <a href="#accordianContact" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">My Contact</a>
@@ -114,7 +114,7 @@
 
 
                 </ul>
-             
+
             </div>
         </div>
 
@@ -124,12 +124,64 @@
         <div id="main-wrapper" class="col-md-10 pull-right">
             <div id="main">
 
-                <div class="page-header">
 
-                    <h2 class="text-muted"><span id="blogsHeading" ></span></h2>
+                <div class="page-header">
+                    <h2 class="text-muted"><span id="contactHeading"  ></span></h2>
+
                 </div>
 
-                <p id="blogsPara"> </p>
+
+
+
+
+
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-offset-0 col-md-3">
+                            <div>
+                                <h4>MY CONTACT DETAIL</h4>
+                                <p id="contactPara"> </p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-offset-1 col-md-6">
+                            <h4>CONTACT ME SENDING MESSAGE BY BELOW FORM</h4>
+                            <div class='containerDecoration'>
+                                <form id="contactForm" action="" role="form">
+
+                                    <div class="form-group">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contactNumber">Contact Number</label>
+                                        <input type="tel" class="form-control" id="contactNumber" placeholder="Enter Contact Number" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Your Message</label>
+                                        <textarea cols="3" rows="3" class="form-control" id="message" placeholder="Enter Your Message here..." required></textarea>
+                                    </div>
+
+                                    <div class="text-right">
+                                        <a id="cancelButton" href="../index.html" class="btn btn-warning">Cancel</a>
+                                        <button id="sendButton"  class="btn btn-primary">Send</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
 
 
             </div>
