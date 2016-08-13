@@ -303,7 +303,7 @@ label #inp{
        
     }
 
- #MainMenu, #footer, .animateLogo
+ #MainMenu, #footer, .footer, .animateLogo
    {
         visibility: hidden;
        position: absolute;
