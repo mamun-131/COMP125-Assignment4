@@ -175,7 +175,7 @@ body {
 .page-header
 {
     margin-top: 0px;
-    padding-left: 20px;
+
     
 }
 
@@ -355,6 +355,10 @@ label #inp{
  font-size: 20px;  
    text-shadow:  3px 3px black;
 }
+#projectsHeading{
+       padding-left: 30px;
+}
+ 
 }
 @media (max-width: 990px) {
     #sidebar-wrapper {
