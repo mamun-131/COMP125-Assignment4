@@ -295,11 +295,11 @@ label #inp{
 }*/
 
 @media screen and (max-width: 768px) {
-    h1{
-        font-size:16px;
+    h1, h2{
+        font-size:11px;
     }
     p{
-        font-size:12px;
+        font-size:11px;
        
     }
 
@@ -335,10 +335,10 @@ label #inp{
    color:  #004d4d;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 990px) {
     body {
         padding-top: 0px;
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 @media (max-width: 768px) {
@@ -367,11 +367,13 @@ label #inp{
     width:140px;
 }
 
-.photobook {
+.photobook, .photobook1 {
 
 	width: 100%;
 	height:100%;
+    padding-left: 0px;
 }
+
 }
 
   .footer {
