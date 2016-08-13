@@ -337,7 +337,7 @@ label #inp{
         font-size: 10px;
     }
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     #main-wrapper {
         float:right;
     }
@@ -351,7 +351,7 @@ label #inp{
     #sidebar-wrapper {
         position: static;
         height:auto;
-        max-height: 300px;
+        max-height: 10px;
   		border-right:0;
           visibility: hidden;
 	}
