@@ -181,19 +181,20 @@
         formHandlingContactPage();
         handlingParagraph();
         readParagraphFile();
-        document.getElementById("mamun").innerHTML = greeter.greet();
+     //   var greeter = new Greeter("Mamunur, world!");
+      //  document.getElementById("mamunnnnn").innerHTML = greeter.greet();
     }
 
     // call init funciton when window finishes loading
     window.addEventListener("load", init);
 })();
 
-class Greeter {
+class Greeter1 {
     constructor(public greeting: string) { }
     greet() {
-        return "<h1>" + this.greeting + "</h1>";
+        return "<h1>" + this.greeting + "</h1> mamun";
     }
 };
 
-var greeter = new Greeter("Hello, world!");
+
     
