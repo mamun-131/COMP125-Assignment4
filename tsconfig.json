@@ -1,18 +1,7 @@
-{ 
-     "compilerOptions": { 
-         "emitDecoratorMetadata": true, 
-         "experimentalDecorators": true,
-         "module": "commonjs", 
-         "target": "es5",
-         "sourceMap": true,
-         "outDir": "Scripts/lib",
-         "rootDir": ".",
-         "declaration": true
-     },
-     "exclude": [
-         "node_modules",
-         "dist",
-         ".vscode",
-         "docs"
-     ]
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "sourceMap": true
+    }
 }

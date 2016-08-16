@@ -304,7 +304,7 @@ label #inp{
        
     }
 
- #MainMenu, #footer, .footer, .animateLogo
+ #MainMenu, #footer, .animateLogo
    {
         visibility: hidden;
        position: absolute;
@@ -393,6 +393,10 @@ padding-left: 0px;
     border-collapse:collapse;
     display : table;
 }
+.containerAd {
+   float: right;
+   padding-right: 470px;
+}
 
 #canvas{
     display: table-row;
@@ -405,16 +409,16 @@ padding-left: 0px;
     margin-bottom: 60px;
     vertical-align: bottom;
 }
-#canvas1{
+#canvas468{
     display: table-row;
     position: absolute;
     border: 1px black solid;
     border-radius: 5px;
     height: 60px;
-    width: 4680px;
+    width: 468px;
     background-color: transparent;
     vertical-align: bottom;
-    float: right;
+   
 }
   .footer {
     background-color:#ffffff;
