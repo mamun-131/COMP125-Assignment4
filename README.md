@@ -1,4 +1,4 @@
-# COMP125-S2016-Assignment(3)
+# COMP125-Lesson12
 
-## Updating Web Pages with Ajax
+## CreateJS with TypeScript
 

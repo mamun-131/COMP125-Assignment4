@@ -1,4 +1,4 @@
-module objects {
+module objectsButton {
     export class ButtonAd extends createjs.Bitmap {
         /**
          * Creates an instance of Button.
@@ -15,12 +15,20 @@ module objects {
                 this.regX = this.getBounds().width * 0.5;
                 this.regY = this.getBounds().height * 0.5;
             }
-
+            
+           // this.alpha = 0.7;
             this.x = x;
             this.y = y;
+            
 
             this.on("mouseover", this._mouse_over, this);
             this.on("mouseout", this._mouse_out, this);
+        }
+
+        public getWidth(): number{
+            var buttonWidth = this.image.width;
+
+            return buttonWidth;
         }
 
         /**
@@ -31,9 +39,9 @@ module objects {
          * @return {void}
          */
         private _mouse_over(): void {
-            this.alpha = 0.6; // 30% transparent
+            this.alpha = 0.60; // 30% transparent
 
-
+        
         }
         
         /**
@@ -44,7 +52,7 @@ module objects {
          * @return {void}
          */
         private _mouse_out(): void {
-            this.alpha = 8.0; // 100% solid
+            this.alpha = 0.99; // 100% solid
             
         }
 

@@ -3,8 +3,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var objects;
-(function (objects) {
+var objectsButton;
+(function (objectsButton) {
     var ButtonAd = (function (_super) {
         __extends(ButtonAd, _super);
         /**
@@ -21,11 +21,16 @@ var objects;
                 this.regX = this.getBounds().width * 0.5;
                 this.regY = this.getBounds().height * 0.5;
             }
+            // this.alpha = 0.7;
             this.x = x;
             this.y = y;
             this.on("mouseover", this._mouse_over, this);
             this.on("mouseout", this._mouse_out, this);
         }
+        ButtonAd.prototype.getWidth = function () {
+            var buttonWidth = this.image.width;
+            return buttonWidth;
+        };
         /**
          * This event handler triggers when the mouse is over the button
          *
@@ -34,7 +39,7 @@ var objects;
          * @return {void}
          */
         ButtonAd.prototype._mouse_over = function () {
-            this.alpha = 0.6; // 30% transparent
+            this.alpha = 0.60; // 30% transparent
         };
         /**
          * This event handler triggers when the mouse leaves the button
@@ -44,10 +49,10 @@ var objects;
          * @return {void}
          */
         ButtonAd.prototype._mouse_out = function () {
-            this.alpha = 8.0; // 100% solid
+            this.alpha = 0.99; // 100% solid
         };
         return ButtonAd;
     }(createjs.Bitmap));
-    objects.ButtonAd = ButtonAd;
-})(objects || (objects = {}));
+    objectsButton.ButtonAd = ButtonAd;
+})(objectsButton || (objectsButton = {}));
 //# sourceMappingURL=buttonAd.js.map

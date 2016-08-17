@@ -1,12 +1,12 @@
 {
-  "name": "Assignment3",
-  "homepage": "https://github.com/300872772/COMP125-Assignment3",
+  "name": "comp125-lesson12",
   "authors": [
-    "300872772 <mamun_131@hotmail.com>"
+    "Tom Tsiliopoulos <tsiliopoulos@hotmail.com>"
   ],
   "description": "",
   "main": "",
   "license": "MIT",
+  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -16,9 +16,9 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "^3.1.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.3.6",
     "font-awesome": "^4.6.3",
+    "jquery": "^2.2.4",
     "EaselJS": "easeljs#^0.8.2",
     "TweenJS": "^0.6.2",
     "SoundJS": "^0.6.2",

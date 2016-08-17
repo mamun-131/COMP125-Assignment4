@@ -395,7 +395,7 @@ padding-left: 0px;
 }
 .containerAd {
    float: right;
-   padding-right: 470px;
+   padding-right: 453px;
 }
 
 #canvas{
@@ -409,7 +409,7 @@ padding-left: 0px;
     margin-bottom: 60px;
     vertical-align: bottom;
 }
-#canvas468{
+#canvasBottom{
     display: table-row;
     position: absolute;
     border: 1px black solid;
@@ -418,6 +418,7 @@ padding-left: 0px;
     width: 468px;
     background-color: transparent;
     vertical-align: bottom;
+    
    
 }
   .footer {
