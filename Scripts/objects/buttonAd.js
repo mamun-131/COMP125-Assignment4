@@ -21,11 +21,10 @@ var objectsButton;
                 this.regX = this.getBounds().width * 0.5;
                 this.regY = this.getBounds().height * 0.5;
             }
-            // this.alpha = 0.7;
             this.x = x;
             this.y = y;
-            this.on("mouseover", this._mouse_over, this);
-            this.on("mouseout", this._mouse_out, this);
+            this.on("mousedown", this._mouse_down, this);
+            this.on("pressup", this._press_up, this);
         }
         ButtonAd.prototype.getWidth = function () {
             var buttonWidth = this.image.width;
@@ -38,7 +37,7 @@ var objectsButton;
          * @method _mouse_over
          * @return {void}
          */
-        ButtonAd.prototype._mouse_over = function () {
+        ButtonAd.prototype._mouse_down = function () {
             this.alpha = 0.60; // 30% transparent
         };
         /**
@@ -48,7 +47,7 @@ var objectsButton;
          * @method _mouse_out
          * @return {void}
          */
-        ButtonAd.prototype._mouse_out = function () {
+        ButtonAd.prototype._press_up = function () {
             this.alpha = 0.99; // 100% solid
         };
         return ButtonAd;

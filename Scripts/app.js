@@ -56,13 +56,13 @@ var core;
         return axis;
     }
     function gameLoop(evt) {
-        labelAD.x = checkBounds(labelAD.x, core.CWIDTH, labelAD.getWidth() + (buttonAD.getWidth() * 0.10));
+        labelAD.x = checkBounds(labelAD.x, core.CWIDTH, labelAD.getWidth() + buttonAD.getWidth() * 0.10);
         buttonAD.x = labelAD.x + labelAD.getWidth();
         labelAD.x += 1;
         stage.update();
     }
     function main() {
-        labelAD = new objectsLabel.LabelAd("Grocery Solution", "20px Consolas", "#EEE888", core.CWIDTH * 0.30, core.CHEIGHT * 0.3, false);
+        labelAD = new objectsLabel.LabelAd("Grocery Solution", "20px Consolas", "#EEE888", core.CWIDTH * 0.10, core.CHEIGHT * 0.3, false);
         stage.addChild(labelAD);
         labelAD.on("mouseover", labelAD_mouseover);
         labelAD.on("mouseout", labelAD_mouseout);
@@ -76,13 +76,13 @@ var core;
         buttonAD.on("mouseout", buttonAD_mouseout);
     }
     function labelAD_mouseout() {
-        createjs.Ticker.addEventListener("tick", gameLoop);
+        //  createjs.Ticker.addEventListener("tick", gameLoop);
     }
     function labelAD_mouseover() {
-        createjs.Ticker.removeEventListener("tick", gameLoop);
+        //  createjs.Ticker.removeEventListener("tick", gameLoop);
     }
     function labelAD_clicked() {
-        //call project site
+        window.open('http://www.myrasona.com', '_blank');
     }
     function buttonAD_mouseout() {
         createjs.Ticker.addEventListener("tick", gameLoop);
@@ -91,7 +91,7 @@ var core;
         createjs.Ticker.removeEventListener("tick", gameLoop);
     }
     function buttonAD_clicked() {
-        //  labelAD.text="Mamun";
+        window.open('http://www.myrasona.com', '_blank');
     }
     //FILE READING PROCESS HANDLING FOR PARAGRAPH GENERATION BEGIN+++++++++++++++++++
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -35,7 +35,7 @@ module objectsLabel {
 
             this.on("mouseover", this._mouse_over, this);
             this.on("mouseout", this._mouse_out, this);
-     
+           
         }
         public getWidth(): number{
             var textWidth = this.getMeasuredWidth();

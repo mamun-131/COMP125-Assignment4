@@ -71,7 +71,7 @@ module core {
 
 
     function gameLoop(evt): void {
-        labelAD.x = checkBounds(labelAD.x, CWIDTH,labelAD.getWidth()+(buttonAD.getWidth()*0.10)) ;
+        labelAD.x = checkBounds(labelAD.x, CWIDTH,labelAD.getWidth()+buttonAD.getWidth()*0.10) ;
 
         buttonAD.x = labelAD.x + labelAD.getWidth();
          labelAD.x +=1;
@@ -79,7 +79,7 @@ module core {
     }
     function main(): void {
         labelAD = new objectsLabel.LabelAd("Grocery Solution", "20px Consolas",
-            "#EEE888", CWIDTH * 0.30, CHEIGHT * 0.3, false);
+            "#EEE888", CWIDTH * 0.10, CHEIGHT * 0.3, false);
                 
         stage.addChild(labelAD);
         labelAD.on("mouseover",labelAD_mouseover);
@@ -97,15 +97,15 @@ module core {
 
     }
 function labelAD_mouseout():void{
-   createjs.Ticker.addEventListener("tick", gameLoop);
+ //  createjs.Ticker.addEventListener("tick", gameLoop);
     
 }
  function labelAD_mouseover():void{
-   createjs.Ticker.removeEventListener("tick", gameLoop);
+ //  createjs.Ticker.removeEventListener("tick", gameLoop);
     
 }  
  function labelAD_clicked():void{
-    //call project site
+ window.open('http://www.myrasona.com', '_blank');
 }
 function buttonAD_mouseout():void{
    createjs.Ticker.addEventListener("tick", gameLoop);
@@ -116,7 +116,8 @@ function buttonAD_mouseout():void{
     
 } 
 function buttonAD_clicked():void{   
-  //  labelAD.text="Mamun";
+
+  window.open('http://www.myrasona.com', '_blank');
 }
 
     //FILE READING PROCESS HANDLING FOR PARAGRAPH GENERATION BEGIN+++++++++++++++++++

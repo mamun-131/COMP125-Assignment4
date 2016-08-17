@@ -16,13 +16,12 @@ module objectsButton {
                 this.regY = this.getBounds().height * 0.5;
             }
             
-           // this.alpha = 0.7;
             this.x = x;
             this.y = y;
             
 
-            this.on("mouseover", this._mouse_over, this);
-            this.on("mouseout", this._mouse_out, this);
+            this.on("mousedown", this._mouse_down, this);
+            this.on("pressup", this._press_up, this);
         }
 
         public getWidth(): number{
@@ -38,7 +37,7 @@ module objectsButton {
          * @method _mouse_over
          * @return {void}
          */
-        private _mouse_over(): void {
+        private _mouse_down(): void {
             this.alpha = 0.60; // 30% transparent
 
         
@@ -51,7 +50,7 @@ module objectsButton {
          * @method _mouse_out
          * @return {void}
          */
-        private _mouse_out(): void {
+        private _press_up(): void {
             this.alpha = 0.99; // 100% solid
             
         }

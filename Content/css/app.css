@@ -96,7 +96,7 @@ body {
     padding: 50px 0 0px 0;
     position: fixed;
     border-right: 1px solid gray;
-    background-color: #009999;
+   /* background-color: #009999;*/
     background-image:-webkit-linear-gradient(top,black 0,#009999 100%);
 
 }
@@ -111,6 +111,7 @@ body {
         border-left: 0;
         border-right: 0;
         border-top: 0;
+      
 
 }
 
@@ -143,7 +144,10 @@ body {
   
 }
 
-
+.list-group >a
+{
+color:lightyellow ;
+}
 .list-group  > a:hover
 {
     color: cyan;
