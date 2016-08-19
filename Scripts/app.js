@@ -19,8 +19,10 @@ var core;
     core.CWIDTH = 468;
     core.CHEIGHT = 60;
     var stage;
-    var labelAD = objectsLabel.LabelAd;
-    var buttonAD = objectsButton.ButtonAd;
+    var labelAdGrocery = objectsLabel.LabelAd;
+    var buttonAdGrocery = objectsButton.ButtonAd;
+    var labelAdPhotographer = objectsLabel.LabelAd;
+    var buttonAdPhotographer = objectsButton.ButtonAd;
     var paragraphHeading = [];
     var paragraphElements = [];
     var xhrParagraphDataFile;
@@ -36,8 +38,6 @@ var core;
         canvas.setAttribute("height", "60");
         stage = new createjs.Stage(canvas);
         stage.enableMouseOver(20);
-        //  createjs.Ticker.useRAF = true;
-        //  createjs.Ticker.setFPS(30);
         createjs.Ticker.framerate = 60;
         createjs.Ticker.addEventListener("tick", gameLoop);
         main();
@@ -56,42 +56,89 @@ var core;
         return axis;
     }
     function gameLoop(evt) {
-        labelAD.x = checkBounds(labelAD.x, core.CWIDTH, labelAD.getWidth() + buttonAD.getWidth() * 0.10);
-        buttonAD.x = labelAD.x + labelAD.getWidth();
-        labelAD.x += 1;
+        if (checkBounds(labelAdGrocery.x, core.CWIDTH, labelAdGrocery.getWidth() + buttonAdGrocery.getWidth() * 0.10) < 0 &&
+            labelAdPhotographer.x < 0 && (labelAdPhotographer.x + labelAdPhotographer.getWidth()) > 0) {
+            labelAdGrocery.x = labelAdPhotographer.x - labelAdGrocery.getWidth() - 80;
+        }
+        else {
+            labelAdGrocery.x = checkBounds(labelAdGrocery.x, core.CWIDTH, labelAdGrocery.getWidth() + buttonAdGrocery.getWidth() * 0.10);
+        }
+        buttonAdGrocery.x = labelAdGrocery.x + labelAdGrocery.getWidth();
+        labelAdGrocery.x += 1;
+        if (checkBounds(labelAdPhotographer.x, core.CWIDTH, labelAdPhotographer.getWidth() + buttonAdPhotographer.getWidth() * 0.10)
+            < 0 && labelAdGrocery.x < 0 && (labelAdGrocery.x + labelAdGrocery.getWidth() > 0)) {
+            labelAdPhotographer.x = labelAdGrocery.x - labelAdPhotographer.getWidth() - 80;
+        }
+        else {
+            labelAdPhotographer.x = checkBounds(labelAdPhotographer.x, core.CWIDTH, labelAdPhotographer.getWidth() + buttonAdPhotographer.getWidth() * 0.10);
+        }
+        buttonAdPhotographer.x = labelAdPhotographer.x + labelAdPhotographer.getWidth();
+        labelAdPhotographer.x += 1;
+        if (labelAdGrocery.x < 0 && labelAdPhotographer.x < 0 && labelAdGrocery.x < labelAdPhotographer.x) {
+        }
         stage.update();
     }
     function main() {
-        labelAD = new objectsLabel.LabelAd("Grocery Solution", "20px Consolas", "#EEE888", core.CWIDTH * 0.10, core.CHEIGHT * 0.3, false);
-        stage.addChild(labelAD);
-        labelAD.on("mouseover", labelAD_mouseover);
-        labelAD.on("mouseout", labelAD_mouseout);
-        labelAD.on("click", labelAD_clicked);
-        buttonAD = new objectsButton.ButtonAd("../Assets/grocery.png", core.CWIDTH * 0.10, core.CHEIGHT * 0.10, false);
-        buttonAD.scaleX = 0.10;
-        buttonAD.scaleY = 0.10;
-        stage.addChild(buttonAD);
-        buttonAD.on("click", buttonAD_clicked);
-        buttonAD.on("mouseover", buttonAD_mouseover);
-        buttonAD.on("mouseout", buttonAD_mouseout);
+        labelAdGrocery = new objectsLabel.LabelAd("Grocery Solution", "20px Consolas", "#EEE888", -200, core.CHEIGHT * 0.3, false);
+        stage.addChild(labelAdGrocery);
+        labelAdGrocery.on("mouseover", labelAdGrocery_mouseover);
+        labelAdGrocery.on("mouseout", labelAdGrocery_mouseout);
+        labelAdGrocery.on("click", labelAdGrocery_clicked);
+        buttonAdGrocery = new objectsButton.ButtonAd("../Assets/grocery.png", -200, core.CHEIGHT * 0.10, false);
+        buttonAdGrocery.scaleX = 0.10;
+        buttonAdGrocery.scaleY = 0.10;
+        stage.addChild(buttonAdGrocery);
+        buttonAdGrocery.on("click", buttonAdGrocery_clicked);
+        buttonAdGrocery.on("mouseover", buttonAdGrocery_mouseover);
+        buttonAdGrocery.on("mouseout", buttonAdGrocery_mouseout);
+        labelAdPhotographer = new objectsLabel.LabelAd("Website Development", "20px Consolas", "#EEE888", (core.CWIDTH * 0.50), core.CHEIGHT * 0.3, false);
+        stage.addChild(labelAdPhotographer);
+        labelAdPhotographer.on("mouseover", labelAdPhotographer_mouseover);
+        labelAdPhotographer.on("mouseout", labelAdPhotographer_mouseout);
+        labelAdPhotographer.on("click", labelAdPhotographer_clicked);
+        buttonAdPhotographer = new objectsButton.ButtonAd("../Assets/web_development.png", core.CWIDTH * 0.50, core.CHEIGHT * 0.10, false);
+        buttonAdPhotographer.scaleX = 0.10;
+        buttonAdPhotographer.scaleY = 0.10;
+        stage.addChild(buttonAdPhotographer);
+        buttonAdPhotographer.on("click", buttonAdPhotographer_clicked);
+        buttonAdPhotographer.on("mouseover", buttonAdPhotographer_mouseover);
+        buttonAdPhotographer.on("mouseout", buttonAdPhotographer_mouseout);
     }
-    function labelAD_mouseout() {
-        //  createjs.Ticker.addEventListener("tick", gameLoop);
-    }
-    function labelAD_mouseover() {
-        //  createjs.Ticker.removeEventListener("tick", gameLoop);
-    }
-    function labelAD_clicked() {
-        window.open('http://www.myrasona.com', '_blank');
-    }
-    function buttonAD_mouseout() {
+    function labelAdGrocery_mouseout() {
         createjs.Ticker.addEventListener("tick", gameLoop);
     }
-    function buttonAD_mouseover() {
+    function labelAdGrocery_mouseover() {
         createjs.Ticker.removeEventListener("tick", gameLoop);
     }
-    function buttonAD_clicked() {
+    function labelAdGrocery_clicked() {
         window.open('http://www.myrasona.com', '_blank');
+    }
+    function buttonAdGrocery_mouseout() {
+        createjs.Ticker.addEventListener("tick", gameLoop);
+    }
+    function buttonAdGrocery_mouseover() {
+        createjs.Ticker.removeEventListener("tick", gameLoop);
+    }
+    function buttonAdGrocery_clicked() {
+        window.open('http://www.myrasona.com', '_blank');
+    }
+    function labelAdPhotographer_mouseout() {
+        createjs.Ticker.addEventListener("tick", gameLoop);
+    }
+    function labelAdPhotographer_mouseover() {
+        createjs.Ticker.removeEventListener("tick", gameLoop);
+    }
+    function labelAdPhotographer_clicked() {
+        window.open('http://photographers.azurewebsites.net', '_blank');
+    }
+    function buttonAdPhotographer_mouseout() {
+        createjs.Ticker.addEventListener("tick", gameLoop);
+    }
+    function buttonAdPhotographer_mouseover() {
+        createjs.Ticker.removeEventListener("tick", gameLoop);
+    }
+    function buttonAdPhotographer_clicked() {
+        window.open('http://photographers.azurewebsites.net', '_blank');
     }
     //FILE READING PROCESS HANDLING FOR PARAGRAPH GENERATION BEGIN+++++++++++++++++++
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

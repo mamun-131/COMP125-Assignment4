@@ -23,8 +23,10 @@ module core {
     export const CWIDTH: number = 468;
     export const CHEIGHT: number = 60;
     let stage: createjs.Stage;
-    let labelAD = objectsLabel.LabelAd;
-    let buttonAD = objectsButton.ButtonAd;
+    let labelAdGrocery = objectsLabel.LabelAd;
+    let buttonAdGrocery = objectsButton.ButtonAd;
+    let labelAdPhotographer = objectsLabel.LabelAd;
+    let buttonAdPhotographer = objectsButton.ButtonAd;
 
 
     var paragraphHeading = [];
@@ -36,23 +38,21 @@ module core {
     var email;
     var contactNumber;
     var message;
- 
-    
+
+
     function initCanvas(): void {
         canvas = document.getElementById("canvasBottom");
         canvas.setAttribute("width", "468");
         canvas.setAttribute("height", "60");
         stage = new createjs.Stage(canvas);
         stage.enableMouseOver(20);
-          //  createjs.Ticker.useRAF = true;
-  //  createjs.Ticker.setFPS(30);
         createjs.Ticker.framerate = 60;
         createjs.Ticker.addEventListener("tick", gameLoop);
 
         main();
     }
 
-   
+
     /**
      * Utility Method to set the bounds of an object
      * 
@@ -63,7 +63,7 @@ module core {
     function checkBounds(axis: number, boundary: number, objectWidth: number): number {
         if (axis >= boundary) {
             axis = -objectWidth;
-               
+
         }
 
         return axis;
@@ -71,55 +71,113 @@ module core {
 
 
     function gameLoop(evt): void {
-        labelAD.x = checkBounds(labelAD.x, CWIDTH,labelAD.getWidth()+buttonAD.getWidth()*0.10) ;
+    if (checkBounds(labelAdGrocery.x, CWIDTH, labelAdGrocery.getWidth() + buttonAdGrocery.getWidth() * 0.10) < 0 &&
+            labelAdPhotographer.x < 0 && (labelAdPhotographer.x + labelAdPhotographer.getWidth())>0){
+            labelAdGrocery.x = labelAdPhotographer.x - labelAdGrocery.getWidth()-80 ;
+        }
+        else {
+            labelAdGrocery.x = checkBounds(labelAdGrocery.x, CWIDTH, labelAdGrocery.getWidth() + buttonAdGrocery.getWidth() * 0.10);
+        }
+        buttonAdGrocery.x = labelAdGrocery.x + labelAdGrocery.getWidth();
+        labelAdGrocery.x += 1;
 
-        buttonAD.x = labelAD.x + labelAD.getWidth();
-         labelAD.x +=1;
+        if (checkBounds(labelAdPhotographer.x, CWIDTH, labelAdPhotographer.getWidth() + buttonAdPhotographer.getWidth() * 0.10) 
+        < 0 && labelAdGrocery.x < 0 && (labelAdGrocery.x +labelAdGrocery.getWidth()>0) {
+            labelAdPhotographer.x = labelAdGrocery.x -labelAdPhotographer.getWidth()-80;
+        }
+        else {
+            labelAdPhotographer.x = checkBounds(labelAdPhotographer.x, CWIDTH, labelAdPhotographer.getWidth() + buttonAdPhotographer.getWidth() * 0.10);
+        }
+        buttonAdPhotographer.x = labelAdPhotographer.x + labelAdPhotographer.getWidth();
+        labelAdPhotographer.x += 1;
+
+        if (labelAdGrocery.x <0 && labelAdPhotographer.x<0 && labelAdGrocery.x < labelAdPhotographer.x)
+        {
+
+        }
         stage.update();
-    }
+   }
     function main(): void {
-        labelAD = new objectsLabel.LabelAd("Grocery Solution", "20px Consolas",
-            "#EEE888", CWIDTH * 0.10, CHEIGHT * 0.3, false);
-                
-        stage.addChild(labelAD);
-        labelAD.on("mouseover",labelAD_mouseover);
-        labelAD.on("mouseout",labelAD_mouseout);
-        labelAD.on("click", labelAD_clicked);
+        labelAdGrocery = new objectsLabel.LabelAd("Grocery Solution", "20px Consolas",
+            "#EEE888", -200, CHEIGHT * 0.3, false);
+        stage.addChild(labelAdGrocery);
+        labelAdGrocery.on("mouseover", labelAdGrocery_mouseover);
+        labelAdGrocery.on("mouseout", labelAdGrocery_mouseout);
+        labelAdGrocery.on("click", labelAdGrocery_clicked);
 
-        buttonAD = new objectsButton.ButtonAd("../Assets/grocery.png",CWIDTH * 0.10,CHEIGHT * 0.10,false);
-        buttonAD.scaleX = 0.10;
-        buttonAD.scaleY = 0.10;
-        stage.addChild(buttonAD);
+        buttonAdGrocery = new objectsButton.ButtonAd("../Assets/grocery.png", -200, CHEIGHT * 0.10, false);
+        buttonAdGrocery.scaleX = 0.10;
+        buttonAdGrocery.scaleY = 0.10;
+        stage.addChild(buttonAdGrocery);
+        buttonAdGrocery.on("click", buttonAdGrocery_clicked);
+        buttonAdGrocery.on("mouseover", buttonAdGrocery_mouseover);
+        buttonAdGrocery.on("mouseout", buttonAdGrocery_mouseout);
 
-        buttonAD.on("click", buttonAD_clicked);
-        buttonAD.on("mouseover",buttonAD_mouseover);
-        buttonAD.on("mouseout",buttonAD_mouseout);
+
+        labelAdPhotographer = new objectsLabel.LabelAd("Website Development", "20px Consolas",
+            "#EEE888", (CWIDTH * 0.50), CHEIGHT * 0.3, false);
+        stage.addChild(labelAdPhotographer);
+        labelAdPhotographer.on("mouseover", labelAdPhotographer_mouseover);
+        labelAdPhotographer.on("mouseout", labelAdPhotographer_mouseout);
+        labelAdPhotographer.on("click", labelAdPhotographer_clicked);
+
+        buttonAdPhotographer = new objectsButton.ButtonAd("../Assets/web_development.png", CWIDTH * 0.50, CHEIGHT * 0.10, false);
+        buttonAdPhotographer.scaleX = 0.10;
+        buttonAdPhotographer.scaleY = 0.10;
+        stage.addChild(buttonAdPhotographer);
+        buttonAdPhotographer.on("click", buttonAdPhotographer_clicked);
+        buttonAdPhotographer.on("mouseover", buttonAdPhotographer_mouseover);
+        buttonAdPhotographer.on("mouseout", buttonAdPhotographer_mouseout);
 
     }
-function labelAD_mouseout():void{
- //  createjs.Ticker.addEventListener("tick", gameLoop);
-    
-}
- function labelAD_mouseover():void{
- //  createjs.Ticker.removeEventListener("tick", gameLoop);
-    
-}  
- function labelAD_clicked():void{
- window.open('http://www.myrasona.com', '_blank');
-}
-function buttonAD_mouseout():void{
-   createjs.Ticker.addEventListener("tick", gameLoop);
-    
-}
- function buttonAD_mouseover():void{
-   createjs.Ticker.removeEventListener("tick", gameLoop);
-    
-} 
-function buttonAD_clicked():void{   
+    function labelAdGrocery_mouseout(): void {
+        createjs.Ticker.addEventListener("tick", gameLoop);
 
-  window.open('http://www.myrasona.com', '_blank');
-}
+    }
+    function labelAdGrocery_mouseover(): void {
+        createjs.Ticker.removeEventListener("tick", gameLoop);
 
+    }
+    function labelAdGrocery_clicked(): void {
+        window.open('http://www.myrasona.com', '_blank');
+    }
+
+    function buttonAdGrocery_mouseout(): void {
+        createjs.Ticker.addEventListener("tick", gameLoop);
+
+    }
+    function buttonAdGrocery_mouseover(): void {
+        createjs.Ticker.removeEventListener("tick", gameLoop);
+
+    }
+    function buttonAdGrocery_clicked(): void {
+
+        window.open('http://www.myrasona.com', '_blank');
+    }
+
+    function labelAdPhotographer_mouseout(): void {
+        createjs.Ticker.addEventListener("tick", gameLoop);
+
+    }
+    function labelAdPhotographer_mouseover(): void {
+        createjs.Ticker.removeEventListener("tick", gameLoop);
+
+    }
+    function labelAdPhotographer_clicked(): void {
+        window.open('http://photographers.azurewebsites.net', '_blank');
+    }
+    function buttonAdPhotographer_mouseout(): void {
+        createjs.Ticker.addEventListener("tick", gameLoop);
+
+    }
+    function buttonAdPhotographer_mouseover(): void {
+        createjs.Ticker.removeEventListener("tick", gameLoop);
+
+    }
+    function buttonAdPhotographer_clicked(): void {
+
+        window.open('http://photographers.azurewebsites.net', '_blank');
+    }
     //FILE READING PROCESS HANDLING FOR PARAGRAPH GENERATION BEGIN+++++++++++++++++++
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     /*
