@@ -32,6 +32,14 @@ var core;
     var email;
     var contactNumber;
     var message;
+    //CANVAS ANIMATION AND OBJECTS HANDLING ++++++++++++++++++++++++++++++++++++++++
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    /**
+     * Initial Method to initialize Canvas and its objects
+     *
+     * @method initCanvas
+     * @returns {void}
+     */
     function initCanvas() {
         canvas = document.getElementById("canvasBottom");
         canvas.setAttribute("width", "468");
@@ -45,6 +53,7 @@ var core;
     /**
      * Utility Method to set the bounds of an object
      *
+     * @method checkBounds
      * @param {number} axis
      * @param {number} boundary
      * @returns {number}
@@ -55,6 +64,13 @@ var core;
         }
         return axis;
     }
+    /**
+     * Utility Method to ensure iteration of statement as per intervel of tricker and animation of AD
+     *
+     * @method gameLoop
+     * @param {var} evt
+     * @returns {void}
+     */
     function gameLoop(evt) {
         if (checkBounds(labelAdGrocery.x, core.CWIDTH, labelAdGrocery.getWidth() + buttonAdGrocery.getWidth() * 0.10) < 0 &&
             labelAdPhotographer.x < 0 && (labelAdPhotographer.x + labelAdPhotographer.getWidth()) > 0) {
@@ -78,6 +94,12 @@ var core;
         }
         stage.update();
     }
+    /**
+     * Utility Method to initialize objects for Canvas
+     *
+     * @method main
+     * @returns {void}
+     */
     function main() {
         labelAdGrocery = new objectsLabel.LabelAd("Grocery Solution", "20px Consolas", "#EEE888", -200, core.CHEIGHT * 0.3, false);
         stage.addChild(labelAdGrocery);
@@ -104,42 +126,116 @@ var core;
         buttonAdPhotographer.on("mouseover", buttonAdPhotographer_mouseover);
         buttonAdPhotographer.on("mouseout", buttonAdPhotographer_mouseout);
     }
+    /**
+     * This function is a event handler function for labelAdGrocery_mouseout event
+     *
+     * @method labelAdGrocery_mouseout
+     * @return {void}
+     */
     function labelAdGrocery_mouseout() {
         createjs.Ticker.addEventListener("tick", gameLoop);
     }
+    /**
+     * This function is a event handler function for labelAdGrocery_mouseover event
+     *
+     * @method labelAdGrocery_mouseover
+     * @return {void}
+     */
     function labelAdGrocery_mouseover() {
         createjs.Ticker.removeEventListener("tick", gameLoop);
     }
+    /**
+ * This function is a event handler function for labelAdGrocery_clicked event
+ *
+ * @method labelAdGrocery_clicked
+ * @return {void}
+ */
     function labelAdGrocery_clicked() {
         window.open('http://www.myrasona.com', '_blank');
     }
+    /**
+     * This function is a event handler function for buttonAdGrocery_mouseout event
+     *
+     * @method buttonAdGrocery_mouseout
+     * @return {void}
+     */
     function buttonAdGrocery_mouseout() {
         createjs.Ticker.addEventListener("tick", gameLoop);
     }
+    /**
+ * This function is a event handler function for buttonAdGrocery_mouseover event
+ *
+ * @method buttonAdGrocery_mouseover
+ * @return {void}
+ */
     function buttonAdGrocery_mouseover() {
         createjs.Ticker.removeEventListener("tick", gameLoop);
     }
+    /**
+ * This function is a event handler function for buttonAdGrocery_clicked event
+ *
+ * @method buttonAdGrocery_clicked
+ * @return {void}
+ */
     function buttonAdGrocery_clicked() {
         window.open('http://www.myrasona.com', '_blank');
     }
+    /**
+     * This function is a event handler function for labelAdPhotographer_mouseout event
+     *
+     * @method labelAdPhotographer_mouseout
+     * @return {void}
+     */
     function labelAdPhotographer_mouseout() {
         createjs.Ticker.addEventListener("tick", gameLoop);
     }
+    /**
+ * This function is a event handler function for labelAdPhotographer_mouseover event
+ *
+ * @method labelAdPhotographer_mouseover
+ * @return {void}
+ */
     function labelAdPhotographer_mouseover() {
         createjs.Ticker.removeEventListener("tick", gameLoop);
     }
+    /**
+ * This function is a event handler function for labelAdPhotographer_clicked event
+ *
+ * @method labelAdPhotographer_clicked
+ * @return {void}
+ */
     function labelAdPhotographer_clicked() {
         window.open('http://photographers.azurewebsites.net', '_blank');
     }
+    /**
+ * This function is a event handler function for buttonAdPhotographer_mouseout event
+ *
+ * @method buttonAdPhotographer_mouseout
+ * @return {void}
+ */
     function buttonAdPhotographer_mouseout() {
         createjs.Ticker.addEventListener("tick", gameLoop);
     }
+    /**
+ * This function is a event handler function for buttonAdPhotographer_mouseover event
+ *
+ * @method buttonAdPhotographer_mouseover
+ * @return {void}
+ */
     function buttonAdPhotographer_mouseover() {
         createjs.Ticker.removeEventListener("tick", gameLoop);
     }
+    /**
+ * This function is a event handler function for buttonAdPhotographer_clicked event
+ *
+ * @method buttonAdPhotographer_clicked
+ * @return {void}
+ */
     function buttonAdPhotographer_clicked() {
         window.open('http://photographers.azurewebsites.net', '_blank');
     }
+    // END OF CANVAS HANDLING++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     //FILE READING PROCESS HANDLING FOR PARAGRAPH GENERATION BEGIN+++++++++++++++++++
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     /*

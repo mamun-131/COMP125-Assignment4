@@ -40,6 +40,14 @@ module core {
     var message;
 
 
+    //CANVAS ANIMATION AND OBJECTS HANDLING ++++++++++++++++++++++++++++++++++++++++
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    /**
+     * Initial Method to initialize Canvas and its objects
+     * 
+     * @method initCanvas
+     * @returns {void}
+     */
     function initCanvas(): void {
         canvas = document.getElementById("canvasBottom");
         canvas.setAttribute("width", "468");
@@ -56,6 +64,7 @@ module core {
     /**
      * Utility Method to set the bounds of an object
      * 
+     * @method checkBounds
      * @param {number} axis
      * @param {number} boundary
      * @returns {number}
@@ -70,10 +79,17 @@ module core {
     }
 
 
+    /**
+     * Utility Method to ensure iteration of statement as per intervel of tricker and animation of AD
+     * 
+     * @method gameLoop
+     * @param {var} evt
+     * @returns {void}
+     */
     function gameLoop(evt): void {
-    if (checkBounds(labelAdGrocery.x, CWIDTH, labelAdGrocery.getWidth() + buttonAdGrocery.getWidth() * 0.10) < 0 &&
-            labelAdPhotographer.x < 0 && (labelAdPhotographer.x + labelAdPhotographer.getWidth())>0){
-            labelAdGrocery.x = labelAdPhotographer.x - labelAdGrocery.getWidth()-80 ;
+        if (checkBounds(labelAdGrocery.x, CWIDTH, labelAdGrocery.getWidth() + buttonAdGrocery.getWidth() * 0.10) < 0 &&
+            labelAdPhotographer.x < 0 && (labelAdPhotographer.x + labelAdPhotographer.getWidth()) > 0) {
+            labelAdGrocery.x = labelAdPhotographer.x - labelAdGrocery.getWidth() - 80;
         }
         else {
             labelAdGrocery.x = checkBounds(labelAdGrocery.x, CWIDTH, labelAdGrocery.getWidth() + buttonAdGrocery.getWidth() * 0.10);
@@ -81,9 +97,9 @@ module core {
         buttonAdGrocery.x = labelAdGrocery.x + labelAdGrocery.getWidth();
         labelAdGrocery.x += 1;
 
-        if (checkBounds(labelAdPhotographer.x, CWIDTH, labelAdPhotographer.getWidth() + buttonAdPhotographer.getWidth() * 0.10) 
-        < 0 && labelAdGrocery.x < 0 && (labelAdGrocery.x +labelAdGrocery.getWidth()>0) {
-            labelAdPhotographer.x = labelAdGrocery.x -labelAdPhotographer.getWidth()-80;
+        if (checkBounds(labelAdPhotographer.x, CWIDTH, labelAdPhotographer.getWidth() + buttonAdPhotographer.getWidth() * 0.10)
+            < 0 && labelAdGrocery.x < 0 && (labelAdGrocery.x + labelAdGrocery.getWidth() > 0) {
+            labelAdPhotographer.x = labelAdGrocery.x - labelAdPhotographer.getWidth() - 80;
         }
         else {
             labelAdPhotographer.x = checkBounds(labelAdPhotographer.x, CWIDTH, labelAdPhotographer.getWidth() + buttonAdPhotographer.getWidth() * 0.10);
@@ -91,12 +107,18 @@ module core {
         buttonAdPhotographer.x = labelAdPhotographer.x + labelAdPhotographer.getWidth();
         labelAdPhotographer.x += 1;
 
-        if (labelAdGrocery.x <0 && labelAdPhotographer.x<0 && labelAdGrocery.x < labelAdPhotographer.x)
-        {
+        if (labelAdGrocery.x < 0 && labelAdPhotographer.x < 0 && labelAdGrocery.x < labelAdPhotographer.x) {
 
         }
         stage.update();
-   }
+    }
+
+    /**
+     * Utility Method to initialize objects for Canvas
+     * 
+     * @method main
+     * @returns {void}
+     */
     function main(): void {
         labelAdGrocery = new objectsLabel.LabelAd("Grocery Solution", "20px Consolas",
             "#EEE888", -200, CHEIGHT * 0.3, false);
@@ -130,54 +152,129 @@ module core {
         buttonAdPhotographer.on("mouseout", buttonAdPhotographer_mouseout);
 
     }
+
+
+    /**
+     * This function is a event handler function for labelAdGrocery_mouseout event
+     * 
+     * @method labelAdGrocery_mouseout
+     * @return {void} 
+     */
     function labelAdGrocery_mouseout(): void {
         createjs.Ticker.addEventListener("tick", gameLoop);
 
     }
+    /**
+     * This function is a event handler function for labelAdGrocery_mouseover event
+     * 
+     * @method labelAdGrocery_mouseover
+     * @return {void} 
+     */
     function labelAdGrocery_mouseover(): void {
         createjs.Ticker.removeEventListener("tick", gameLoop);
 
     }
+    /**
+ * This function is a event handler function for labelAdGrocery_clicked event
+ * 
+ * @method labelAdGrocery_clicked
+ * @return {void} 
+ */
     function labelAdGrocery_clicked(): void {
         window.open('http://www.myrasona.com', '_blank');
     }
-
+    /**
+     * This function is a event handler function for buttonAdGrocery_mouseout event
+     * 
+     * @method buttonAdGrocery_mouseout
+     * @return {void} 
+     */
     function buttonAdGrocery_mouseout(): void {
         createjs.Ticker.addEventListener("tick", gameLoop);
 
     }
+    /**
+ * This function is a event handler function for buttonAdGrocery_mouseover event
+ * 
+ * @method buttonAdGrocery_mouseover
+ * @return {void} 
+ */
     function buttonAdGrocery_mouseover(): void {
         createjs.Ticker.removeEventListener("tick", gameLoop);
 
     }
+    /**
+ * This function is a event handler function for buttonAdGrocery_clicked event
+ * 
+ * @method buttonAdGrocery_clicked
+ * @return {void} 
+ */
     function buttonAdGrocery_clicked(): void {
 
         window.open('http://www.myrasona.com', '_blank');
     }
-
+    /**
+     * This function is a event handler function for labelAdPhotographer_mouseout event
+     * 
+     * @method labelAdPhotographer_mouseout
+     * @return {void} 
+     */
     function labelAdPhotographer_mouseout(): void {
         createjs.Ticker.addEventListener("tick", gameLoop);
 
     }
+    /**
+ * This function is a event handler function for labelAdPhotographer_mouseover event
+ * 
+ * @method labelAdPhotographer_mouseover
+ * @return {void} 
+ */
     function labelAdPhotographer_mouseover(): void {
         createjs.Ticker.removeEventListener("tick", gameLoop);
 
     }
+    /**
+ * This function is a event handler function for labelAdPhotographer_clicked event
+ * 
+ * @method labelAdPhotographer_clicked
+ * @return {void} 
+ */
     function labelAdPhotographer_clicked(): void {
         window.open('http://photographers.azurewebsites.net', '_blank');
     }
+    /**
+ * This function is a event handler function for buttonAdPhotographer_mouseout event
+ * 
+ * @method buttonAdPhotographer_mouseout
+ * @return {void} 
+ */
     function buttonAdPhotographer_mouseout(): void {
         createjs.Ticker.addEventListener("tick", gameLoop);
 
     }
+    /**
+ * This function is a event handler function for buttonAdPhotographer_mouseover event
+ * 
+ * @method buttonAdPhotographer_mouseover
+ * @return {void} 
+ */
     function buttonAdPhotographer_mouseover(): void {
         createjs.Ticker.removeEventListener("tick", gameLoop);
 
     }
+    /**
+ * This function is a event handler function for buttonAdPhotographer_clicked event
+ * 
+ * @method buttonAdPhotographer_clicked
+ * @return {void} 
+ */
     function buttonAdPhotographer_clicked(): void {
 
         window.open('http://photographers.azurewebsites.net', '_blank');
     }
+    // END OF CANVAS HANDLING++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
     //FILE READING PROCESS HANDLING FOR PARAGRAPH GENERATION BEGIN+++++++++++++++++++
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     /*
