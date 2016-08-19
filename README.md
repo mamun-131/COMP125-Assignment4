@@ -1,4 +1,4 @@
-# COMP125-Lesson12
+# COMP125-Assignment 4
 
-## CreateJS with TypeScript
+## CreateJS with TypeScript to make animated AD
 
