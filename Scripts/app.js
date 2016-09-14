@@ -151,7 +151,7 @@ var core;
  * @return {void}
  */
     function labelAdGrocery_clicked() {
-        window.open('http://www.myrasona.com', '_blank');
+        window.open('http://mywebshopping.azurewebsites.net', '_blank');
     }
     /**
      * This function is a event handler function for buttonAdGrocery_mouseout event
@@ -178,7 +178,7 @@ var core;
  * @return {void}
  */
     function buttonAdGrocery_clicked() {
-        window.open('http://www.myrasona.com', '_blank');
+        window.open('http://mywebshopping.azurewebsites.net', '_blank');
     }
     /**
      * This function is a event handler function for labelAdPhotographer_mouseout event
