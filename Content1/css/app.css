@@ -113,7 +113,10 @@ body {
         border-top: 0;
 
 }
-
+#experience
+{
+    font-size: 10px; 
+}
 .list-group-item
 {
   background-image:-webkit-linear-gradient(top,#009999 0,black 100%);
