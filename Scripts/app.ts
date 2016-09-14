@@ -181,7 +181,7 @@ module core {
  * @return {void} 
  */
     function labelAdGrocery_clicked(): void {
-        window.open('http://www.myrasona.com', '_blank');
+        window.open('http://mywebshopping.azurewebsites.net', '_blank');
     }
     /**
      * This function is a event handler function for buttonAdGrocery_mouseout event
@@ -211,7 +211,7 @@ module core {
  */
     function buttonAdGrocery_clicked(): void {
 
-        window.open('http://www.myrasona.com', '_blank');
+        window.open('http://mywebshopping.azurewebsites.net', '_blank');
     }
     /**
      * This function is a event handler function for labelAdPhotographer_mouseout event
